@@ -13,9 +13,6 @@ public class SaleItemTests
 	{
 		// Arrange
 		var purchase = new SaleItem(Guid.NewGuid(), 9, 2.99m);
-		// purchase.AddItem(Guid.NewGuid(), 2, 3.5m);
-		// purchase.AddItem(Guid.NewGuid(), 1, 10.9m);
-		// var purchase = ProductPurchaseTestData.CreateWithQuantity(5);
 
 		// Act
 		var discount = purchase.DiscountPercentage;
@@ -32,7 +29,6 @@ public class SaleItemTests
 	{
 		// Arrange
 		var purchase = new SaleItem(Guid.NewGuid(), 20, 3.99m);
-		// var purchase = ProductPurchaseTestData.CreateWithQuantity(15);
 
 		// Act
 		var discount = purchase.DiscountPercentage;
@@ -49,7 +45,6 @@ public class SaleItemTests
 	{
 		// Arrange
 		var purchase = new SaleItem(Guid.NewGuid(), 2, 4.99m);
-		// var purchase = ProductPurchaseTestData.CreateWithQuantity(3);
 
 		// Act
 		var discount = purchase.DiscountPercentage;
