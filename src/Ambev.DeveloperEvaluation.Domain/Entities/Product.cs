@@ -2,7 +2,13 @@ using Ambev.DeveloperEvaluation.Domain.Common;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities;
 
-public sealed class Product(string name) : BaseEntity
+public sealed class Product : BaseEntity
 {
-	public string Name { get; private set; } = name;
+	public Product(string name)
+	{
+		Id = Guid.NewGuid();
+		Name = name;
+	}
+
+	public string Name { get; private set; }
 }

@@ -2,14 +2,21 @@ using Ambev.DeveloperEvaluation.Domain.Common;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities;
 
-public sealed class Sale(Guid customerId, Guid branchId) : BaseEntity
+public sealed class Sale : BaseEntity
 {
+	public Sale(Guid customerId, Guid branchId)
+	{
+		Id = Guid.NewGuid();
+		CustomerId = customerId;
+		BranchId = branchId;
+	}
+
 	public int OrderNumber { get; private set; }
 	
-	public Guid CustomerId { get; private set; } = customerId;
+	public Guid CustomerId { get; private set; }
 	public Customer Customer { get; private set; }
 	
-	public Guid BranchId { get; private set; } = branchId;
+	public Guid BranchId { get; private set; }
 	public Branch Branch { get; private set; }
 	
 	public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;

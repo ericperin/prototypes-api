@@ -13,6 +13,7 @@ public sealed class SaleItem : BaseEntity
 			throw new InvalidOperationException($"Cannot purchase more than {MaxLimit} identical items.");
 		}
 
+		Id = Guid.NewGuid();
 		ProductId = productId;
 		Quantity = quantity;
 		UnitPrice = unitPrice;
