@@ -4,6 +4,14 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities;
 
 public sealed class Sale : BaseEntity
 {
+	public Sale(int orderNumber, Guid customerId, Guid branchId)
+	{
+		OrderNumber = orderNumber;
+		CustomerId = customerId;
+		BranchId = branchId;
+		CreatedAt = DateTime.UtcNow;
+	}
+
 	public int OrderNumber { get; private set; }
 	
 	public Guid CustomerId { get; private set; }
@@ -17,4 +25,9 @@ public sealed class Sale : BaseEntity
 	private ICollection<SaleItem> Items { get; set; } = new List<SaleItem>();
 
 	public decimal TotalAmount => Items.Sum(x => x.TotalPrice);
+
+	public void AddItem(Guid productId, int quantity, decimal unitPrice)
+	{
+		Items.Add(new SaleItem(productId, quantity, unitPrice));
+	}
 }
