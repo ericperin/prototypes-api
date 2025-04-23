@@ -4,9 +4,8 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities;
 
 public sealed class Sale : BaseEntity
 {
-	public Sale(int orderNumber, Guid customerId, Guid branchId)
+	public Sale(Guid customerId, Guid branchId)
 	{
-		OrderNumber = orderNumber;
 		CustomerId = customerId;
 		BranchId = branchId;
 		CreatedAt = DateTime.UtcNow;

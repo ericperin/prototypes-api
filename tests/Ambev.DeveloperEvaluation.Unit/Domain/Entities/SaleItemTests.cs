@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Ambev.DeveloperEvaluation.Unit.Domain.Entities;
 
-public class SaleTests
+public class SaleItemTests
 {
 	/// <summary>
 	/// Tests that a 10% discount for purchases of 4 to 9 identical items.
